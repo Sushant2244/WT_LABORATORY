@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1600x900/?technology,dark') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            margin-left:40%;
+            align-items: center;
+            height: 100vh;
+            background:gray;
+            background-image: url("new.jpeg");
+            background-repeat: no-repeat;
+            background-position:center;
+            background-size:cover;
+        }
+        .calculator {
+            width: 320px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+            border: 2px solid #00f;
+        }
+        .display {
+            width: 94%;
+            height: 60px;
+            font-size: 28px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            background: #222;
+            color: #0f0;
+            border-radius: 5px;
+            box-shadow: inset 0 0 8px rgba(0, 255, 0, 0.5);
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            width: 100%;
+            height: 60px;
+            font-size: 22px;
+            cursor: pointer;
+            background: linear-gradient(145deg, #555, #333);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+        button:hover {
+            background: linear-gradient(145deg, #777, #444);
+            transform: scale(1.05);
+        }
+        .equal {
+            grid-column: span 2;
+            background: #28a745;
+        }
+        .equal:hover {
+            background: #218838;
+        }
+        .clear {
+            background: #dc3545;
+        }
+        .clear:hover {
+            background: #c82333;
+        }
+        .delete {
+            background: #ff8800;
+        }
+        .delete:hover {
+            background: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" class="display" readonly>
+        <div class="buttons">
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('/')">÷</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('*')">×</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('-')">−</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="deleteLastChar()" class="delete">DEL</button>
+            <button onclick="appendToDisplay('+')">+</button>
+
+            <button onclick="clearDisplay()" class="clear">C</button>
+            <button onclick="calculateResult()" class="equal">=</button>
+        </div>
+    </div>
+
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById("display").value += value;
+        }
+
+        function calculateResult() {
+            try {
+                document.getElementById("display").value = eval(document.getElementById("display").value);
+            } catch {
+                document.getElementById("display").value = "Error";
+            }
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        function deleteLastChar() {
+            let display = document.getElementById("display");
+            display.value = display.value.slice(0, -1);
+        }
+    </script>
+
+</body>
+</html>
+
+

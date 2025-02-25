@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin-top: 100px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #2575fc;
+            outline: none;
+            box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit {
+            background: #2575fc;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background: #1d5ed6;
+        }
+
+        .btn-reset {
+            background: #ff3e3e;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background: #d63333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form name="RegForm" onsubmit="return validateForm()" onreset="resetErrors()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="Name" placeholder="Enter your full name">
+            <span id="name-error" class="error-message"></span>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="Address" placeholder="Enter your address">
+            <span id="address-error" class="error-message"></span>
+
+            <label for="email">E-mail Address:</label>
+            <input type="text" id="email" name="EMail" placeholder="Enter your email">
+            <span id="email-error" class="error-message"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="Password" placeholder="Enter your password">
+            <span id="password-error" class="error-message"></span>
+
+            <label for="subject">Select Your Course:</label>
+            <select id="subject" name="Subject">
+                <option value="">Select Course</option>
+                <option value="BTECH">BTECH</option>
+                <option value="BBA">BBA</option>
+                <option value="BCA">BCA</option>
+                <option value="B.COM">B.COM</option>
+            </select>
+            <span id="subject-error" class="error-message"></span>
+
+            <label for="comment">College Name:</label>
+            <textarea id="comment" name="Comment" placeholder="Enter your college name"></textarea>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="agree" name="Agree">
+                <label for="agree">I agree to the above information</label>
+            </div>
+            <span id="agree-error" class="error-message"></span>
+
+            <div class="btn-container">
+                <input type="submit" value="Submit" class="btn btn-submit">
+                <input type="reset" value="Reset" class="btn btn-reset">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value.trim();
+            const addr = document.getElementById("address").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const pass = document.getElementById("password").value.trim();
+            const sub = document.getElementById("subject").value;
+            const agree = document.getElementById("agree").checked;
+
+            const nameErr = document.getElementById("name-error");
+            const addrErr = document.getElementById("address-error");
+            const emailErr = document.getElementById("email-error");
+            const passErr = document.getElementById("password-error");
+            const subErr = document.getElementById("subject-error");
+            const agreeErr = document.getElementById("agree-error");
+
+            nameErr.textContent = "";
+            addrErr.textContent = "";
+            emailErr.textContent = "";
+            passErr.textContent = "";
+            subErr.textContent = "";
+            agreeErr.textContent = "";
+
+            let isValid = true;
+
+            if (name === "" || /\d/.test(name)) {
+                nameErr.textContent = "Please enter a valid name.";
+                isValid = false;
+            }
+            if (addr === "") {
+                addrErr.textContent = "Address cannot be empty.";
+                isValid = false;
+            }
+            if (!email.includes("@") || !email.includes(".")) {
+                emailErr.textContent = "Enter a valid email.";
+                isValid = false;
+            }
+            if (pass.length < 6) {
+                passErr.textContent = "Password must be at least 6 characters.";
+                isValid = false;
+            }
+            if (sub === "") {
+                subErr.textContent = "Please select a course.";
+                isValid = false;
+            }
+            if (!agree) {
+                agreeErr.textContent = "You must agree to the terms.";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+                return true;
+            }
+            return false;
+        }
+
+        function resetErrors() {
+            document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+        }
+    </script>
+</body>
+</html>
