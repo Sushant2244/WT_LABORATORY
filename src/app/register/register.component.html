@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    
+    <label>Name:</label>
+    <input type="text" formControlName="name" placeholder="Enter your full name" />
+    <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+      Name is required.
+    </div>
+
+    <label>Email:</label>
+    <input type="email" formControlName="email" placeholder="Enter your email" />
+    <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+      Email is required and must be valid.
+    </div>
+
+    <label>Phone:</label>
+    <input type="text" formControlName="phone" placeholder="Enter your phone number" />
+    <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched">
+      Phone number must be 10 digits.
+    </div>
+
+    <label>Address:</label>
+    <textarea formControlName="address" placeholder="Enter your address"></textarea>
+    <div *ngIf="registerForm.get('address')?.invalid && registerForm.get('address')?.touched">
+      Address is required.
+    </div>
+
+    <label>Password:</label>
+    <input type="password" formControlName="password" placeholder="Enter a password" />
+    <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+      Password must be at least 6 characters.
+    </div>
+
+    <label>Confirm Password:</label>
+    <input type="password" formControlName="confirmPassword" placeholder="Re-enter your password" />
+    <div *ngIf="registerForm.errors?.['mismatch'] && registerForm.get('confirmPassword')?.touched">
+      Passwords do not match.
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+</div>

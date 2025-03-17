@@ -1,0 +1,124 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe",
+      "email": "jane@example.com",
+      "password": "abcdef"
+    },
+    {
+      "id": "b925",
+      "name": "Sushant",
+      "email": "sushant123@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "bffd",
+      "name": "sneha",
+      "email": "sne@gmail.com",
+      "password": "sneh24679"
+    },
+    {
+      "id": "f670",
+      "name": "Sushant",
+      "email": "xyz@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "a643",
+      "name": "Sushant Uday Naik",
+      "email": "xyz123@gmail.com",
+      "phone": "1234567789",
+      "address": "hello",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "1284",
+      "name": "sushant",
+      "email": "hello@gmail.com",
+      "phone": "1234567891",
+      "address": "d",
+      "password": "1234567",
+      "confirmPassword": "1234567"
+    },
+    {
+      "id": "d037",
+      "name": "sushant",
+      "email": "xyz123@gmail.com",
+      "phone": "1234567891",
+      "address": "dsank",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "e31b",
+      "name": "sushant",
+      "email": "hello1@gmail.com",
+      "phone": "1234568901",
+      "address": "udfiu",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "b0f4",
+      "name": "sushant",
+      "email": "hello1@gmail.com",
+      "phone": "1234568901",
+      "address": "udfiu",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "76ce",
+      "name": "xyz",
+      "email": "xyz123@gmail.com",
+      "phone": "1234567891",
+      "address": "fhdak",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "37f8",
+      "name": "wrwk",
+      "email": "hdgaeh@gmail.com",
+      "phone": "1234567891",
+      "address": "ihduo",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "4624",
+      "name": "ukhwu",
+      "email": "xyz@gmail.com",
+      "phone": "1234567891",
+      "address": "uhu",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "d778",
+      "name": "Sushant",
+      "email": "xyz@gmail.com",
+      "phone": "1234567891",
+      "address": "gfhj",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "3041",
+      "name": "Sushant Naik",
+      "email": "sushant123@gmail.com",
+      "phone": "7654356634",
+      "address": "Pune",
+      "password": "sushant123",
+      "confirmPassword": "sushant123"
+    }
+  ]
+}
