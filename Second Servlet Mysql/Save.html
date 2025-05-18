@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Form</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 350px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .form-container input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .form-container input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <form class="form-container" action="save" method="post">
+    <h2>Book Entry Form</h2>
+    <input type="text" name="t1" placeholder="Book ID">
+    <input type="text" name="t2" placeholder="Book Name">
+    <input type="text" name="t3" placeholder="Book Author">
+    <input type="text" name="t4" placeholder="Book Price">
+    <input type="text" name="t5" placeholder="Book Quantity">
+    <input type="submit" name="b1" value="Save">
+  </form>
+</body>
+</html>
