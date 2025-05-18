@@ -119,6 +119,15 @@
       "address": "Pune",
       "password": "sushant123",
       "confirmPassword": "sushant123"
+    },
+    {
+      "id": "41a1",
+      "name": "Sushant Uday Naik",
+      "email": "sushant123@gmail.com",
+      "phone": "1234567891",
+      "address": "fafa",
+      "password": "123456",
+      "confirmPassword": "123456"
     }
   ]
 }
