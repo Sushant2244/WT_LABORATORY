@@ -1,0 +1,19 @@
+<?xml version = "1.0" ?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+   <bean class="org.apache.struts.views.velocity.VelocityManager" name="default" optional="true" />
+   <constant name = "struts.devMode" value = "true" />
+   
+   <package name = "struts" extends = "struts-default">
+     <action name = "register" 
+         class = "struts.LoginAction" 
+         method = "execute">
+	
+         <result name ="SUCCESS" type="dispatcher">/hello.jsp</result>
+	<result name="ERROR" type="dispatcher">/index.jsp</result>
+      </action>
+   </package>
+</struts>
